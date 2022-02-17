@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Bootstrap</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Bootstrap</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <section class="col-xs-12">
+          <h2>Inline Code</h2>
+          <p>To emphasize text, you can use the <code>&lt;em&gt;</code> tag.</p>
 
-<div class="container">
-  <div class="row">
-    <section class="col-xs-12">
+          <h2>Control Keys</h2>
+          <p>
+            To stop the execution of a process use <kbd>control-c</kbd> or q
+          </p>
 
-      <h2>Inline Code</h2>
-      <p>To emphasize text, you can use the em tag.</p>
+          <h2>Variables</h2>
+          <var>e</var> = mc&sup2;
 
-      <h2>Control Keys</h2>
-      <p>To stop the execution of a process use control-c or q</p>
+          <h2>Short Script</h2>
 
-      <h2>Variables</h2>
-      e = mc&sup2;
+          <pre>
+  //replace IMG inside carousels with a background image
+  $('#featured .item img').each(function() {
+    var imgSrc = $(this).attr('src');
+    $(this).parent().css({'background-image': 'url('+imgSrc+')'});
+    $(this).remove();
+  });
+</pre
+          >
 
-      <h2>Short Script</h2>
+          <h4>Sample Output</h4>
+          <samp
+            >&lt;div class=&quot;item active&quot; style=&quot;background-image:
+            url(images/carousel-lifestyle.jpg);&quot;&gt;&lt;/div&gt;</samp
+          >
 
-//replace IMG inside carousels with a background image
-$('#featured .item img').each(function() {
-  var imgSrc = $(this).attr('src');
-  $(this).parent().css({'background-image': 'url('+imgSrc+')'});
-  $(this).remove();
-});
-
-<h4>Sample Output</h4>
-&lt;div class=&quot;item active&quot; style=&quot;background-image: url(images/carousel-lifestyle.jpg);&quot;&gt;&lt;/div&gt;
-
-
-      <h2>Long Script</h2>
-//replace IMG inside carousels with a background image
+          <h2>Long Script</h2>
+          <pre class="pre-scrollable">
+        //replace IMG inside carousels with a background image
 $('#featured .item img').each(function() {
   var imgSrc = $(this).attr('src');
   $(this).parent().css({'background-image': 'url('+imgSrc+')'});
@@ -49,7 +55,7 @@ $('.navbar a[href*=#]:not([href=#])').click(function() {
   if (location.pathname.replace(/^\//,'') === 
     this.pathname.replace(/^\//,'') && 
     location.hostname === this.hostname) {
-    var target = $(this.hash);
+      var target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
     if (target.length) {
       $('html,body').animate({
@@ -59,14 +65,16 @@ $('.navbar a[href*=#]:not([href=#])').click(function() {
     } //target.length
   } //click function
 }); //smooth scrolling
+</pre
+          >
+        </section>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- content container -->
 
-    </section>
-  </div><!-- row -->   
-</div><!-- content container -->
-
-
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
-</body>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
