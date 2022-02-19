@@ -7,6 +7,10 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
+            $("#example > p").css({"border" : "3px solid red"})
+            // $("div p").css({"border" : "3px solid red"})
+            $("ul + div").css({"border" : "3px solid blue"})
+            $(".a ~ p").css({"border" : "3px solid yellow"})
         });
     </script>
 </head>
@@ -26,7 +30,9 @@
         </ul>
         <div id="example">
             <p class="a">This is paragraph 1</p>
-            <p id="para1">This is paragraph 2</p>
+            <section>
+                <p id="para1">This is paragraph 2</p>
+            </section>
             <p class="b">This is paragraph 3</p>
             <p id="para4" lang="en-us">This is paragraph 4</p>
             <p id="para5" lang="en-gb">This is paragraph 5</p>
