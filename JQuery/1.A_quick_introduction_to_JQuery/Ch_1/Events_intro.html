@@ -3,8 +3,8 @@
 
 <head>
     <title>jQuery Event Handling</title>
-    <link rel="stylesheet" href="../style.css" />
-    <script type="text/javascript" src="../jquery-3.0.0.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="./jquery-3.6.0.js"></script>
     <script type="text/javascript">
         $("document").ready(function() {
             $("#example").on("mousemove", onMouseOver);
@@ -18,7 +18,7 @@
         }
         function onMouseClick(evt) {
             $("#example").text(evt.type + ": " + evt.pageX + ", " + evt.pageY);
-            $("#example").off("mousemove", onMouseOver);
+            // $("#example").off("mousemove", onMouseOver);
         }
         function onMouseLeave(evt) {
             $("#example").text("mouseleave");
