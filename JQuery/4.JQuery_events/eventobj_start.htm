@@ -34,8 +34,25 @@
             
             $("#input1").keypress(updateEventDetails);
         });
-
+        
         function updateEventDetails(evt) {
+            $(".detailLine span[id]").text("");
+            
+            $("#evtType").text(evt.type);
+            $("#evtWhich").text(evt.which);
+            $("#evtTarget").text(evt.target.id);
+
+            if (evt.relatedTarget) {
+                $("#evtRelated").text(evt.relatedTarget.tagName+"#"+evt.relatedTarget.id);
+            }
+            $("#evtPageX").text(evt.pageX);
+            $("#evtPageY").text(evt.pageY);
+            $("#evtClientX").text(evt.clientX);
+            $("#evtClientY").text(evt.clientY);
+            $("#evtMetaKey").text(evt.metaKey);
+            if (evt.data) {
+                $("#evtData").text(evt.data.name);
+            }
         }
     </script>
 </head>
