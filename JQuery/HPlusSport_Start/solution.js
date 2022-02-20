@@ -46,4 +46,4 @@ function updateProductView(categoryName, bVisible) {
   $('.product-item')
     .has(dataSelectorVal)
     .css('display', bVisible ? '' : 'none');
-}
+};
