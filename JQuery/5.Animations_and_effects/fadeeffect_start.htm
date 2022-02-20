@@ -8,15 +8,28 @@
     <script type="text/javascript">
         $(function() {
             $("#fadein").click(function() {
+                $("#theDiv").fadeIn(1000);
             });
             $("#fadeout").click(function() {
+                $("#theDiv").fadeOut(500);
             });
             $("#fadeto3").click(function() {
+                $("#theDiv").fadeTo(500, 0.3);
             });
             $("#fadeup").click(function() {
+                $("#theDiv").fadeTo(500, 1.0);
             });
             $("#pulse").click(function() {
+                $("#theDiv").fadeTo(500, 1.0)
+                .fadeTo(500, 1.0)
+                .fadeTo(500, 0.5)
+                .fadeTo(500, 1.0)
+                .fadeTo(500, 0.5, onComplete)
             });
+
+            function onComplete () {
+                $(this).text("animation done")
+            }
         });
     </script>
     <style type="text/css">
