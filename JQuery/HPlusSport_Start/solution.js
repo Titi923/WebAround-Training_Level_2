@@ -70,17 +70,18 @@ $(function () {
 
   // set the product name in the proper placeholder
   $('#productName').text(prodName);
+  
+  // get the product information via AJAX
+  $.getJSON("product-data.json")
+  .done(function(prodData) {
+      // use the prodID to get this product information
+      prodData.products.forEach(function(elem) {
+          if (elem.prod_id == prodID) {
+              $("#productStock").text(elem.in_stock);
+              $("#productPrice").text(elem.retail_price);
+              $("#productDesc").text(elem.description);
+          }
+      });
+  });
 });
 
-// get the product information via AJAX
-$.getJSON("product-data.json")
-.done(function(prodData) {
-    // use the prodID to get this product information
-    prodData.products.forEach(function(elem) {
-        if (elem.prod_id == prodID) {
-            $("#productStock").text(elem.in_stock);
-            $("#productPrice").text(elem.retail_price);
-            $("#productDesc").text(elem.description);
-        }
-    });
-});
