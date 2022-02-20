@@ -19,12 +19,16 @@
         });
 
         function createContent() {
+            $("#example").html("<p>Hi there!</p>");
         }
-
+        
         function changeContent() {
+            let newItem = $("<p>This is a new paragraph</p>");
+            $("#para1").html(newItem);
         }
-
+        
         function changeAllTheContent() {
+            $("#example p").text("<p>This is a paragraph</p>");
         }
     </script>
 </head>
