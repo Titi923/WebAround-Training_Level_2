@@ -8,10 +8,13 @@
     <script type="text/javascript">
         $(function() {
             $("#show").click(function() {
+                $("#theDiv").show("slow")
             });
             $("#hide").click(function() {
+                $("#theDiv").hide(1500)
             });
             $("#toggle").click(function() {
+                $("#theDiv").toggle(1000)
             });
         });
     </script>
