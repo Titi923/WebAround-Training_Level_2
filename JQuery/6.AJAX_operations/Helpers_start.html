@@ -18,6 +18,9 @@
         });
         
         function getData() {
+            $.get("testdata.txt", successFn);
+            // $("#content").load("testdata.html");
+            // $("#content").load("testdata.html #p2");
         }
 
         function successFn(result) {
