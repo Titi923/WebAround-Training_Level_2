@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>HPlus Sport</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="../JQuery/jquery-3.0.0.js"></script>
+  <script src="../jquery-3.0.0.js"></script>
   <script src="./solution.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -25,6 +25,9 @@
       </ul><!-- navbar -->
     </div><!-- container nav-elements -->
   </nav>
+  <span>
+    <input type="checkbox" id="checkVit">Vitamins
+  </span>
   <div class="container tagline">
     <h1 class="headline">Our Mission</h1>
     <p>We support and encourage <em>active and healthy</em> lifestyles, by offering <em>ethically sourced</em> and <em>eco-friendly</em> nutritional products for the <em>performance-driven</em> athlete.</p>
@@ -46,6 +49,21 @@
   <header class="imageheader"></header>
   <div class="container">
     <h2 class="headline">Products</h2>
+    <!-- Product control show -->
+    <div id="productControls">
+      <form>
+          <div>
+              <span>Show: </span>
+              <input id="cbVitamins" type="checkbox" checked="checked" />
+              <label for="cbVitamins">Vitamins </label>
+              <input id="cbMineralWater" type="checkbox" checked="checked" />
+              <label for="cbMineralWater">Mineral Water </label>
+              <input id="cbProtein" type="checkbox" checked="checked" />
+              <label for="cbProtein">Protein Bars </label>
+          </div>
+      </form>
+  </div>
+  <!-- Done -->
     <p>H+ Sport is <em>dedicated to creating</em> eco-friendly, high-quality, nutrient-rich, nutritional products that <em>enhance active lifestyles</em>. We <a href="#guarantee">guarantee</a> it. Take a look at some of our products.</p>
   </div><!-- container -->
   <ul class="product-list">
