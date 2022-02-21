@@ -36,6 +36,13 @@ $categories = [
     if($category['id'] == $category_id) {
 
       // Code when this id matched requested id
+      $subcategories = $category['subcategories'];
+      foreach($subcategories as $subcategory) {
+        echo "<option value=\"{$subcategory['id']}\">";
+        echo $subcategory['name'];
+        echo "</option>";
+      } 
+
 
     }
   }
