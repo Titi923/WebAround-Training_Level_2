@@ -44,18 +44,29 @@
         result_div.style.display = 'none';
       }
 
+      function gatherFormData(form) {
+        var inputs = form.getElementsByTagName('input');
+        var array = [];
+        for(i=0; i < inputs.length; i++) {
+          var inputNameValue = inputs[i].name + '=' + inputs[i].value;
+          array.push(inputNameValue);
+        }
+        return array.join('&');
+      }
+
       function calculateMeasurements() {
         clearResult();
 
         var form = document.getElementById("measurement-form");
         var action = form.getAttribute("action");
 
-        // gather form data
+        var form_data = new FormData(form);
+        for ([key, value] of form_data.entries()) {
+          console.log(key + ': ' + value);
+        }
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', action, true);
-        // do not set content-type with FormData
-        //xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onreadystatechange = function () {
           if(xhr.readyState == 4 && xhr.status == 200) {
