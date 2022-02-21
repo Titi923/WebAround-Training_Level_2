@@ -10,6 +10,9 @@
       .error {
         border: 1px solid red;
       }
+      #spinner {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -28,6 +31,10 @@
       </form>
     </div>
 
+    <div id="spinner">
+      <img src="spinner.gif" width="50" height="50" />
+    </div>
+
     <div id="result">
       <p>The total volume is: <span id="volume"></span></p>
     </div>
@@ -36,6 +43,16 @@
 
       var result_div = document.getElementById("result");
       var volume = document.getElementById("volume");
+
+      function showSpinner() {
+        var spinner = document.getElementById("spinner");
+        spinner.style.display = 'block';
+      }
+
+      function hideSpinner() {
+        var spinner = document.getElementById("spinner");
+        spinner.style.display = 'none';
+      }
 
       function displayErrors(errors) {
         var inputs = document.getElementsByTagName('input');
@@ -78,6 +95,7 @@
       function calculateMeasurements() {
         clearResult();
         clearErrors();
+        showSpinner();
 
         var form = document.getElementById("measurement-form");
         var action = form.getAttribute("action");
@@ -97,6 +115,9 @@
           if(xhr.readyState == 4 && xhr.status == 200) {
             var result = xhr.responseText;
             console.log('Result: ' + result);
+
+            hideSpinner();
+
             var json = JSON.parse(result);
             if(json.hasOwnProperty('errors') && json.errors.length > 0) {
               displayErrors(json.errors);
