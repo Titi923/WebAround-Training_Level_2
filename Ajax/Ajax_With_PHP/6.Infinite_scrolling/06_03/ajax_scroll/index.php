@@ -52,6 +52,23 @@
         load_more.style.display = 'none';
       }
 
+      function appendToDiv(div, new_html) {
+        // Put the new HTML into a temp div
+        // This causes browser to parse it as elements.
+        var temp = document.createElement('div');
+        temp.innerHTML = new_html;
+
+        // Then we can find and work with those elements.
+        // Use firstElementChild b/c of how DOM treats whitespace.
+        var class_name = temp.firstElementChild.className;
+        var items = temp.getElementsByClassName(class_name);
+
+        var len = items.length;
+        for(i=0; i < len; i++) {
+          div.appendChild(items[0]);
+        }
+      }
+
       function loadMore() {
 
         showSpinner();
@@ -67,6 +84,7 @@
 
             hideSpinner();
             // append results to end of blog posts
+            appendToDiv(container, result);
             showLoadMore();
 
           }
