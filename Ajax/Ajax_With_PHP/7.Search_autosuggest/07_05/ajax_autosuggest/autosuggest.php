@@ -16,11 +16,11 @@
   // * strpos requires strict comparison operator (===)
   //     returns 0 for match at start of string
   //     returns false for no match
-  function str_starts_with($choice, $query) {
+  function strg_starts_with($choice, $query) {
     return strpos($choice, $query) === 0;
   }
 
-  function str_contains($choice, $query) {
+  function strg_contains($choice, $query) {
     return strpos($choice, $query) !== false;
   }
 
@@ -34,7 +34,7 @@
     foreach($choices as $choice) {
       // Downcase both strings for case-insensitive search
       $d_choice = strtolower($choice);
-      if(str_starts_with($d_choice, $d_query)) {
+      if(strg_starts_with($d_choice, $d_query)) {
         $matches[] = $choice;
       }
     }
