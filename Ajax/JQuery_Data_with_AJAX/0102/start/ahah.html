@@ -317,8 +317,23 @@ var $flowers = $('#flower-items');
 
 $('#flower-items').find('a').on('click', function(e){
 	e.preventDefault();
-
 	
+	var $desc = $('#flower-description');
+	
+	switch($(this).attr('href')) {
+		case 'calla.html' :
+			$desc.load('fragments/lilies.html');
+			break;
+		case 'sunflowers.html' :
+			$desc.load('fragments/sunflower.html');
+			break;
+		case 'iris.html' :
+			$desc.load('fragments/irises.html');
+			break;
+		case 'alstromeria.html' :
+			$desc.load('fragments/peruvian.html');
+			break;
+	}
 });
 
 
