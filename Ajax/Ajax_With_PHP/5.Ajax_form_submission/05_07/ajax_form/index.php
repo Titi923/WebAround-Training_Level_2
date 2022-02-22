@@ -27,7 +27,6 @@
         Height: <input type="text" name="height" /><br />
         <br />
         <input id="html-submit" type="submit" value="Submit" />
-        <input id="ajax-submit" type="button" value="Ajax Submit" />
       </form>
     </div>
 
@@ -43,7 +42,7 @@
 
       var result_div = document.getElementById("result");
       var volume = document.getElementById("volume");
-      var button = document.getElementById("ajax-submit");
+      var button = document.getElementById("html-submit");
       var orig_button_value = button.value;
 
       function showSpinner() {
@@ -143,7 +142,10 @@
         xhr.send(form_data);
       }
 
-      button.addEventListener("click", calculateMeasurements);
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+        calculateMeasurements();
+      });
 
     </script>
 
