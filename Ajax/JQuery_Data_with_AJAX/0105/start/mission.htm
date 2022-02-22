@@ -127,12 +127,37 @@ $(document).ready(function () {
 			zipcode = $('#txt-zip').val(),
 			apiKey = 'YOUR_KEY_HERE';
 			
+		var requestURL = 'http://congress.api.sunlightfoundation.com/legislators/locate?callback=?';
+			
 		// collect the data
 		
-		$results.html('Your senators for ' + zipcode + ' are:');
+		$.getJSON(requestURL, {
+			'apikey' : apiKey,
+			'zip' : zipcode,
+		}, function(data){
+			if (data.results && data.results.length > 0) {
+			
+				var mySenators = '<p>Here are your Senators:</p>';
+			
+				$.each(data.results, function(i, rep) {
+					if ('senate' === rep.chamber.toLowerCase()) {
+						mySenators += '<p>';
+						mySenators += '<a href="' + rep.contact_form + '" target="_blank">';
+						mySenators += rep.first_name + ' ' + rep.last_name;
+						mySenators += '</a>';
+						mySenators += '</p>';
+					}
+				});
+			
+				mySenators += '<p>Please write to them in support of this legislation.</p>';
+			
+				$results.html(mySenators);
+			} else {
+				$results.html('<p>No senators found for zip code ' + zipcode + '. Please try again.</p>');
+			}
+		});
 		
 		/*
-		var requestURL = 'http://congress.api.sunlightfoundation.com/legislators/locate?callback=?';
 
 		$.getJSON(requestURL, {
 			'apikey' : apiKey,
