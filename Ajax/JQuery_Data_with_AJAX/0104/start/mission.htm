@@ -123,6 +123,13 @@ $(document).ready(function () {
 	$('#rep-lookup').submit(function(e){
 		e.preventDefault();
 		
+		var $results = $('#rep-lookup-results'),
+			zipcode = $('#txt-zip').val(),
+			apiKey = 'opasdokapodkpaoksdpoak091240912as9fa09fu';
+			
+		// collect the data
+		
+		$results.html('Your senators for ' + zipcode + ' are:');
 	});
 });
 
