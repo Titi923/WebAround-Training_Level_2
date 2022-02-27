@@ -2,11 +2,11 @@
 
 <html lang="en">
   <head>
-    <title></title>
+    <title>Globe Bank</title>
     <meta charset="utf-8">
   </head>
 
   <body>
-
+      <h1>Globe bank</h1>
   </body>
 </html>
