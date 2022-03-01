@@ -1,14 +1,17 @@
-<!doctype html>
+<?php require_once('../../private/initialize.php'); ?>
 
-<html lang="en">
-  <head>
-    <title>Globe Bank</title>
-    <meta charset="utf-8">
-  </head>
+<?php $page_title = 'Staff Menu'; ?>
+<?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-  <body>
+<div id="content">
+  <div id="main-menu">
+    <h2>Main Menu</h2>
+    <ul>
+      <li><a href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a></li>
+      <li><a href="<?php echo url_for('/staff/pages/index.php'); ?>">Pages</a></li>
+    </ul>
+  </div>
 
-    <h1>Globe Bank: Coming Soon</h1>
+</div>
 
-  </body>
-</html>
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>
